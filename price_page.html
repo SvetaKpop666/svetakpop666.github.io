@@ -50,7 +50,7 @@
             border-radius: 10px;
             position: relative;
             background: var(--tg-theme-secondary-bg-color);
-            margin: 0 0 20px 0;
+            margin: 20px 0 0 0;
             text-decoration: none;
             color: var(--tg-theme-text-color);
             z-index: 0;
@@ -70,7 +70,7 @@
             width: 50%;
             padding-top: 20px;
             padding-left: 5px;
-            padding-right: 10px;
+            padding-right: 5px;
         }
 
         .product-description p {
@@ -129,9 +129,83 @@
             list-style: none;
             padding: 0;
         }
+
+        .customize-product {
+            border-radius: 10px;
+            position: relative;
+            background: var(--tg-theme-secondary-bg-color);
+            margin: 0 0 20px 0;
+            text-decoration: none;
+            color: var(--tg-theme-text-color);
+            z-index: 0;
+            height: 250px;
+            width: auto;
+        }
+
+        .customize-product p {
+            color: var(--tg-theme-link-color);
+            position: relative;
+            margin: 0;
+            height: 2.5em;
+            font-size:larger;
+            overflow: hidden;
+        }
+
+        .customize-product button{
+            position: relative;
+            opacity: 1;
+            border-radius: 50px;
+            height: 60px;
+            width: 50%;
+            font-size: medium;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+        }
+
+        .customize-product button:hover{
+            opacity: 0.7;
+        }
+
+        .customize-product-collums {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
     </style>
 
     <body> 
+
+        <div class="customize-product">
+            <p style="text-align: center; height: 3em;"><b>Индивидуальный план консультации</b></p>
+            <p style="text-align: center; height: 4em; font-size: 1em;">Если вам не подходит ни один из предложенных пакетов раскладов, то предлагаем вам самостоятельно выбрать необходимое количество вопросов.</p>
+            <p><input type="range" min="1" max="10" step="1" value="1" list="rangeList1" style="width: 100%;"
+                onchange="document.getElementById('rangeValue').innerHTML = this.value;"></p>
+            <datalist id="rangeList1">
+                    <option value="1" label="1">
+                    <option value="2" label="2">
+                    <option value="3" label="3">
+                    <option value="4" label="4">
+                    <option value="5" label="5">
+                    <option value="6" label="6">
+                    <option value="7" label="7">
+                    <option value="8" label="8">
+                    <option value="9" label="9">
+                    <option value="10" label="10">
+            </datalist>
+            <div class="customize-product-collums">
+                <button>Записаться на консультацию</button>
+                <div>
+                    <p style="font-size: medium;">Цена за один вопрос: value</p>
+                    <a>Цена: value * <span id="rangeValue">1</span> = result</a>
+                </div>
+            </div>
+        </div>
+
+        <hr style="color: var(--tg-theme-text-color);">
+
         <ul class="products clearfix">
             <li class="product-wrapper">
                     <div class="product">
@@ -139,7 +213,7 @@
                             <div class="product-photo">
                                 <img src="https://svetakpop666.github.io/BotProfilePhoto.jpg">
                             </div>
-                            <p class="product-name">"Что-то пошло не так"</p>
+                            <p class="product-name"><b>"Что-то пошло не так"</b></p>
                             <p class="product-price">Цена: 600</p>
                             <button>Записаться на консультацию</button>
                         </div>
@@ -154,6 +228,50 @@
                         </div>
                     </div>
                     <hr style="color: var(--tg-theme-text-color);">
+            </li>
+            <li class="product-wrapper">
+                <div class="product">
+                    <div class="product-main">
+                        <div class="product-photo">
+                            <img src="https://svetakpop666.github.io/BotProfilePhoto.jpg">
+                        </div>
+                        <p class="product-name"><b>"Что-то пошло не так"</b></p>
+                        <p class="product-price">Цена: 600</p>
+                        <button>Записаться на консультацию</button>
+                    </div>
+                    <div class="product-description">
+                        <p> <b>Вопросы входящие в расклад:</b>  <br>
+                            1) Описание ситуации (в каком вы положении, что происходит) <br>
+                            2) Чего вы ожидали/добивались <br>
+                            3) Как развивается ситуация <br>
+                            4) Главная опасность(ошибка) <br>
+                            5) Что вам может помочь в данной ситуации <br>
+                            6) Результат</p>
+                    </div>
+                </div>
+                <hr style="color: var(--tg-theme-text-color);">
+            </li>
+            <li class="product-wrapper">
+                <div class="product">
+                    <div class="product-main">
+                        <div class="product-photo">
+                            <img src="https://svetakpop666.github.io/BotProfilePhoto.jpg">
+                        </div>
+                        <p class="product-name"><b>"Что-то пошло не так"</b></p>
+                        <p class="product-price">Цена: 600</p>
+                        <button>Записаться на консультацию</button>
+                    </div>
+                    <div class="product-description">
+                        <p> <b>Вопросы входящие в расклад:</b>  <br>
+                            1) Описание ситуации (в каком вы положении, что происходит) <br>
+                            2) Чего вы ожидали/добивались <br>
+                            3) Как развивается ситуация <br>
+                            4) Главная опасность(ошибка) <br>
+                            5) Что вам может помочь в данной ситуации <br>
+                            6) Результат</p>
+                    </div>
+                </div>
+                <hr style="color: var(--tg-theme-text-color);">
             </li>
         </ul>
 
