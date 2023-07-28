@@ -146,7 +146,6 @@
             color: var(--tg-theme-link-color);
             position: relative;
             margin: 0;
-            height: 2.5em;
             font-size:larger;
             overflow: hidden;
         }
@@ -156,7 +155,7 @@
             opacity: 1;
             border-radius: 50px;
             height: 60px;
-            width: 50%;
+            width: 100%;
             font-size: medium;
             font-weight: 500;
             cursor: pointer;
@@ -174,13 +173,19 @@
             flex-direction: row;
             justify-content: space-evenly;
         }
+
+        .customize-collum {
+            padding-left: 10px;
+            padding-right: 5px;
+            width: 50%;
+        }
     </style>
 
     <body> 
 
         <div class="customize-product">
-            <p style="text-align: center; height: 3em;"><b>Индивидуальный план консультации</b></p>
-            <p style="text-align: center; height: 4em; font-size: 1em;">Если вам не подходит ни один из предложенных пакетов раскладов, то предлагаем вам самостоятельно выбрать необходимое количество вопросов.</p>
+            <p style="text-align: center; height: 3em; color: var(--tg-theme-text-color);"><b>Индивидуальный план консультации</b></p>
+            <p style="text-align: center; height: 5em; font-size: 1em;">Если вам не подходит ни один из предложенных пакетов раскладов, то предлагаем вам самостоятельно выбрать необходимое количество вопросов.</p>
             <p><input type="range" min="1" max="10" step="1" value="1" list="rangeList1" style="width: 100%;"
                 onchange="document.getElementById('rangeValue').innerHTML = this.value;"></p>
             <datalist id="rangeList1">
@@ -196,10 +201,12 @@
                     <option value="10" label="10">
             </datalist>
             <div class="customize-product-collums">
-                <button>Записаться на консультацию</button>
-                <div>
+                <div class="customize-collum">
+                    <button>Записаться на консультацию</button>
+                </div>
+                <div class="customize-collum">
                     <p style="font-size: medium;">Цена за один вопрос: value</p>
-                    <a>Цена: value * <span id="rangeValue">1</span> = result</a>
+                    <p style="font-size: medium;">Цена: value * <span id="rangeValue">1</span> = result</p>
                 </div>
             </div>
         </div>
