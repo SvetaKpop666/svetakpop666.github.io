@@ -36,7 +36,26 @@
             width: 100%;
             float: left;
             transition: width .2s;
-    }   
+        }
+
+        @media only screen and (min-width: 450px) {
+            .product-wrapper {
+                width: 50%;
+            }
+        }
+
+        .product {
+            display: block;
+            border: 1px solid #b5e9a7;
+            border-radius: 3px;
+            position: relative;
+            background: #fff;
+            margin: 0 20px 20px 0;
+            text-decoration: none;
+            color: #474747;
+            z-index: 0;
+            height: 300px;
+        }
     </style>
 
     <body> 
@@ -57,10 +76,6 @@
         <div>
             <button id="enroll">Записаться на прием</button>
         </div>
-
-        <form id="product">
-            <button id="order">Записаться на прием</button>
-        </form>
 
         <script>
             let tg = window.Telegram.WebApp;
