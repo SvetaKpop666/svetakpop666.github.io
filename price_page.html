@@ -16,8 +16,7 @@
         }
 
         .product button{
-            position: static;
-            bottom: 0;
+            position: absolute;
             opacity: 1;
             border-radius: 50px;
             height: 60px;
@@ -28,6 +27,7 @@
             transition: all 500ms ease;
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
+            bottom: 0;
         }
 
         .product button:hover{
@@ -142,7 +142,7 @@
                             <button>Записаться на консультацию</button>
                         </div>
                         <div class="product-description">
-                            <p> Вопросы входящие в расклад: <br>
+                            <p> <b>Вопросы входящие в расклад:</b>  <br>
                                 1) Описание ситуации (в каком вы положении, что происходит) <br>
                                 2) Чего вы ожидали/добивались <br>
                                 3) Как развивается ситуация <br>
