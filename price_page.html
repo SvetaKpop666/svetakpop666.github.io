@@ -14,9 +14,28 @@
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
         }
+
+        button{
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+
+        button:hover{
+            background: var(--tg-theme-secondary-bg-color);
+        }
     </style>
 
     <body> 
         <h1>Hello World</h1> 
+
+        <form id="product">
+            <button id="order">Записаться на прием</button>
+        </form>
     </body>
 </html>
