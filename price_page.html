@@ -17,7 +17,7 @@
 
         .product button{
             opacity: 1;
-            border-radius: 10px;
+            border-radius: 50px;
             height: 60px;
             width: 200px;
             left: 10px;
@@ -41,7 +41,9 @@
         }
 
         .product {
-            display: block;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
             border-radius: 10px;
             position: relative;
             background: #8a8a8a;
@@ -54,19 +56,29 @@
         }
 
         .product-main {
-            position: relative;
-            height: 200px;
-            width: 200px;
-            left: 10px;
+            height: 300px;
+            width: 300px;
         }
 
-        .product-photo {
+        .product-description {
+            height: 300px;
+            width: 300px;
+        }
+
+        .product-description p {
             position: relative;
+            margin: 0;
+            font-size: 1em;
+            line-height: 1.4em;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .product-photo{
             border-radius: 10px;
-            height: 120px;
-            width: 200px;
-            left: 10px;
-            bottom: 10px;
+            width: 300px;
+            height: 200px;
+            position: relative;
             overflow: hidden;
         }
 
@@ -76,8 +88,8 @@
             bottom: 0;
             left: 0;
             right: 0;
-            max-width: 200px;
-            max-height: 200px;
+            max-width: 300px;
+            max-height: 300px;
             margin: auto;
             transition: transform .4s ease-out;
         }
@@ -92,21 +104,19 @@
     <body> 
         <ul class="products clearfix">
             <li class="product-wrapper">
-                <a class="product">
-                    <div class="product-photo">
-                        <img src="https://svetakpop666.github.io/BotProfilePhoto.jpg" alt="">
+                    <div class="product">
+                        <div class="product-main">
+                            <div class="product-photo">
+                                <img src="https://svetakpop666.github.io/BotProfilePhoto.jpg">
+                            </div>
+                            <p class="product-name">"Что-то пошло не так"</p>
+                            <p class="product-price">Цена: 600</p>
+                            <button>хуй</button>
+                        </div>
+                        <div class="product-description">
+                            <p>Если в ситуации у вас появилось чувство, что "что-то не так", то этот расклад поможет вам понять какая произошла ошибка или убедится, что всё идёт как надо. Так же он даст вам понимание какого результата ожидать.</p>
+                        </div>
                     </div>
-                    <div class="product-main">
-                        <h1>Продукт</h1>
-                        <button id="enroll">Записаться на прием</button>
-                    </div>
-                </a>
-            </li>
-            <li class="product-wrapper">
-                <a class="product"></a>
-            </li>
-            <li class="product-wrapper">    
-                <a class="product"></a>
             </li>
         </ul>
 
