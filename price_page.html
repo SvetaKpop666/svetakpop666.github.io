@@ -139,7 +139,7 @@
             text-decoration: none;
             color: var(--tg-theme-text-color);
             z-index: 0;
-            height: 250px;
+            height: 260px;
             width: auto;
         }
 
@@ -177,6 +177,7 @@
         }
 
         .customize-collum {
+            padding-top: 30px;
             height: 60px;
             padding-left: 10px;
             padding-right: 5px;
@@ -194,13 +195,14 @@
 
         .hr {
             color: var(--tg-theme-text-color);
+            width: 70%;
         }
     </style>
 
     <body> 
 
         <div class="customize-product">
-            <p style="text-align: center; height: 3em;"><b>Индивидуальный план консультации</b></p>
+            <p style="text-align: center; height: 3em; padding-top: 10px;"><b>Индивидуальный план консультации</b></p>
             <p style="text-align: center; height: 5em; font-size: 1em;">Если вам не подходит ни один из предложенных пакетов раскладов, то предлагаем вам самостоятельно выбрать необходимое количество вопросов.</p>
             <p><input type="range" min="1" max="10" step="1" value="1" list="rangeList1" style="width: 100%;"
                 onchange="document.getElementById('rangeValue').innerHTML = this.value;"></p>
@@ -216,12 +218,12 @@
                     <option value="9" label="9">
                     <option value="10" label="10">
             </datalist>
-            <div class="customize-product-collums" style="padding-top: 5%;">
+            <div class="customize-product-collums">
                 <div class="customize-collum">
                     <button class="customOrderBtn">Записаться на консультацию</button>
                 </div>
                 <div class="customize-collum">
-                    <div style="padding-top: 6%;">
+                    <div style="padding-top: 10px;">
                         <p style="font-size: medium; ">Цена за один вопрос: value</p>
                         <p style="font-size: medium;">Цена: value * <span id="rangeValue" style="color: var(--tg-theme-link-color);">1</span> = result</p>
                     </div>
@@ -266,22 +268,24 @@
             let customOrderBtn = document.getElementById("customOrderBtn");
             let orderBtn = document.getElementById("orderBtn");
 
-            orderBtn.addEventListener("click", () => {
-                tg.close();
-            });
-
-            customOrderBtn.addEventListener("click", () => {
-                tg.close();
-            });
+            let name = document.getElementById("orderBtn");
+            let questionCount = document.getElementById('rangeValue').innerHTML = this.value;
 
             let order = {
                 name: name,
                 questionCount: questionCount
             }
 
+            orderBtn.addEventListener("click", () => {
+                tg.sendData(JSON.stringify(order))
+                tg.close();
+            });
 
+            customOrderBtn.addEventListener("click", () => {
+                tg.sendData(JSON.stringify(order))
+                tg.close();
+            });
 
-            tg.sendData(JSON.stringify(order))
         </script>
     </body>
 </html>
