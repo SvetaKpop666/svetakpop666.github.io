@@ -3,8 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <title>PricePage</title>
-
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
     </head>
 
     <style>
@@ -261,12 +259,14 @@
                     <hr class="hr">
             </li>
         </ul>
-
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
         <script>
             let tg = window.Telegram.WebApp;
 
             let customOrderBtn = document.getElementById("customOrderBtn");
             let orderBtn = document.getElementById("orderBtn");
+
+            tg.expand();
 
             let name = document.getElementById("orderBtn");
             let questionCount = document.getElementById('rangeValue').innerHTML = this.value;
