@@ -19,6 +19,7 @@
             position: absolute;
             margin-left: auto;
             margin-right: auto;
+            border: 0px solid #e34761;
             bottom: 2%;
             opacity: 1;
             border-radius: 50px;
@@ -143,7 +144,7 @@
         }
 
         .customize-product p {
-            color: var(--tg-theme-link-color);
+            color: var(--tg-theme-text-color);
             position: relative;
             margin: 0;
             font-size:larger;
@@ -153,6 +154,7 @@
         .customize-product button{
             position: relative;
             opacity: 1;
+            border: 0px solid #e34761;
             border-radius: 50px;
             height: 60px;
             width: 100%;
@@ -175,16 +177,30 @@
         }
 
         .customize-collum {
+            height: 60px;
             padding-left: 10px;
             padding-right: 5px;
             width: 50%;
+        }
+
+        .themeText {
+            text-align: center;
+            color: var(--tg-theme-text-color);
+            position: relative;
+            margin: 0;
+            font-size:larger;
+            overflow: hidden;
+        }
+
+        .hr {
+            color: var(--tg-theme-text-color);
         }
     </style>
 
     <body> 
 
         <div class="customize-product">
-            <p style="text-align: center; height: 3em; color: var(--tg-theme-text-color);"><b>Индивидуальный план консультации</b></p>
+            <p style="text-align: center; height: 3em;"><b>Индивидуальный план консультации</b></p>
             <p style="text-align: center; height: 5em; font-size: 1em;">Если вам не подходит ни один из предложенных пакетов раскладов, то предлагаем вам самостоятельно выбрать необходимое количество вопросов.</p>
             <p><input type="range" min="1" max="10" step="1" value="1" list="rangeList1" style="width: 100%;"
                 onchange="document.getElementById('rangeValue').innerHTML = this.value;"></p>
@@ -200,18 +216,24 @@
                     <option value="9" label="9">
                     <option value="10" label="10">
             </datalist>
-            <div class="customize-product-collums">
+            <div class="customize-product-collums" style="padding-top: 5%;">
                 <div class="customize-collum">
-                    <button>Записаться на консультацию</button>
+                    <button class="customOrderBtn">Записаться на консультацию</button>
                 </div>
                 <div class="customize-collum">
-                    <p style="font-size: medium;">Цена за один вопрос: value</p>
-                    <p style="font-size: medium;">Цена: value * <span id="rangeValue">1</span> = result</p>
+                    <div style="padding-top: 6%;">
+                        <p style="font-size: medium; ">Цена за один вопрос: value</p>
+                        <p style="font-size: medium;">Цена: value * <span id="rangeValue" style="color: var(--tg-theme-link-color);">1</span> = result</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <hr style="color: var(--tg-theme-text-color);">
+        <hr class="hr">
+
+        <h1 class="themeText">Письки харьков</h1>
+
+        <hr class="hr">
 
         <ul class="products clearfix">
             <li class="product-wrapper">
@@ -222,7 +244,7 @@
                             </div>
                             <p class="product-name"><b>"Что-то пошло не так"</b></p>
                             <p class="product-price">Цена: 600</p>
-                            <button>Записаться на консультацию</button>
+                            <button class="orderBtn">Записаться на консультацию</button>
                         </div>
                         <div class="product-description">
                             <p> <b>Вопросы входящие в расклад:</b>  <br>
@@ -234,56 +256,32 @@
                                 6) Результат</p>
                         </div>
                     </div>
-                    <hr style="color: var(--tg-theme-text-color);">
-            </li>
-            <li class="product-wrapper">
-                <div class="product">
-                    <div class="product-main">
-                        <div class="product-photo">
-                            <img src="https://svetakpop666.github.io/BotProfilePhoto.jpg">
-                        </div>
-                        <p class="product-name"><b>"Что-то пошло не так"</b></p>
-                        <p class="product-price">Цена: 600</p>
-                        <button>Записаться на консультацию</button>
-                    </div>
-                    <div class="product-description">
-                        <p> <b>Вопросы входящие в расклад:</b>  <br>
-                            1) Описание ситуации (в каком вы положении, что происходит) <br>
-                            2) Чего вы ожидали/добивались <br>
-                            3) Как развивается ситуация <br>
-                            4) Главная опасность(ошибка) <br>
-                            5) Что вам может помочь в данной ситуации <br>
-                            6) Результат</p>
-                    </div>
-                </div>
-                <hr style="color: var(--tg-theme-text-color);">
-            </li>
-            <li class="product-wrapper">
-                <div class="product">
-                    <div class="product-main">
-                        <div class="product-photo">
-                            <img src="https://svetakpop666.github.io/BotProfilePhoto.jpg">
-                        </div>
-                        <p class="product-name"><b>"Что-то пошло не так"</b></p>
-                        <p class="product-price">Цена: 600</p>
-                        <button>Записаться на консультацию</button>
-                    </div>
-                    <div class="product-description">
-                        <p> <b>Вопросы входящие в расклад:</b>  <br>
-                            1) Описание ситуации (в каком вы положении, что происходит) <br>
-                            2) Чего вы ожидали/добивались <br>
-                            3) Как развивается ситуация <br>
-                            4) Главная опасность(ошибка) <br>
-                            5) Что вам может помочь в данной ситуации <br>
-                            6) Результат</p>
-                    </div>
-                </div>
-                <hr style="color: var(--tg-theme-text-color);">
+                    <hr class="hr">
             </li>
         </ul>
 
         <script>
             let tg = window.Telegram.WebApp;
+
+            let customOrderBtn = document.getElementById("customOrderBtn");
+            let orderBtn = document.getElementById("orderBtn");
+
+            orderBtn.addEventListener("click", () => {
+                tg.close();
+            });
+
+            customOrderBtn.addEventListener("click", () => {
+                tg.close();
+            });
+
+            let order = {
+                name: name,
+                questionCount: questionCount
+            }
+
+
+
+            tg.sendData(JSON.stringify(order))
         </script>
     </body>
 </html>
