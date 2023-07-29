@@ -203,7 +203,7 @@
             <p style="text-align: center; height: 3em; padding-top: 10px;"><b>Индивидуальный план консультации</b></p>
             <p style="text-align: center; height: 5em; font-size: 1em;">Если вам не подходит ни один из предложенных пакетов раскладов, то предлагаем вам самостоятельно выбрать необходимое количество вопросов.</p>
             <p><input type="range" min="1" max="10" step="1" value="1" list="rangeList1" style="width: 100%;"
-                onchange="document.getElementById('rangeValue').innerHTML = this.value;" id="rangeValue></p>
+                onchange="document.getElementById('rangeValue').innerHTML = this.value;" id="rangeValue>"</p>
             <datalist id="rangeList1">
                     <option value="1" label="1">
                     <option value="2" label="2">
@@ -268,9 +268,11 @@
 
             tg.expand();
 
+            let _name = document.getElementById("orderBtn");
             let _questionCount = document.getElementById('rangeValue').value;
 
             let order = {
+                name: _name,
                 questionCount: _questionCount
             }
 
